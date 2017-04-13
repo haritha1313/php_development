@@ -1,0 +1,24 @@
+#header{
+text-align: center;
+margin-top: 0px;
+width: fill;
+text-transform: capitalize;
+
+	}
+	h1{
+	font-family: calibri;
+	text-transform: uppercase;
+	background-color: black;
+	color: lavender;
+	
+}
+#banner{
+	background-color: lavender;
+	margin-top: -22px;
+}
+a{
+	width: fill;
+	background-color: lavender;
+	color: black;
+	font-family: sans-serif;
+}

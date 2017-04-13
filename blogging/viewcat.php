@@ -1,0 +1,46 @@
+<?php
+require("config.php");
+$error=0;
+	if(!(is_numeric($_GET['id']))&&$_GET['id']!='FALSE'){
+		$error=1;
+	}
+	if($error==1) 
+		header("Location:" . $config_basedir . "/viewcat.php");
+	else{
+	$validcat=$_GET['id'];
+	}
+	
+	require("header.php");
+$sql="SELECT * FROM categories WHERE 1;"; 
+$result = mysql_query($sql);
+if($_GET['id']=='FALSE'){
+	while($row = mysql_fetch_assoc($result))
+	echo "<a href='viewcat.php?id=" . $row['id'] . "'>" . $row['cat'] . "</a><br/>";
+}else{
+if (false === $result) {
+    echo mysql_error();}
+while($row = mysql_fetch_assoc($result)) {
+	if($validcat==$row['id']){
+		echo "<strong>" . $row['cat'] . "</strong><br/>";
+		$entriessql="SELECT * FROM entries WHERE cat_id=" . $validcat . " ORDER BY dateposted DESC;";
+		$entriesres=mysql_query($entriessql);
+		if (false === $entriesres) {
+    echo mysql_error();}
+		$numrows_entries=mysql_num_rows($entriesres);
+		echo "<ul>";
+		if($numrows_entries==0)
+			echo "<li>No entries</li>";
+		else{
+			while($entriesrow=mysql_fetch_assoc($entriesres)){
+				echo "<li>" . date("D jS F Y g.iA", strtotime($entriesrow['dateposted'])) . " - <a href='viewentry.php?id=" . $entriesrow['id'] . "'>" . $entriesrow['subject'] ."</a></li>";
+
+			}
+		}echo "</ul>";
+	}
+	else{
+		echo "<a href='viewcat.php?id=" . $row['id'] . "'>" . $row['cat'] . "</a><br/>";
+
+	}
+}}
+require("footer.php");
+?>
