@@ -1,0 +1,79 @@
+
+th { letter-spacing: 2.5px; 
+	background: #eeeeeee; 
+	color: #000000; 
+	text-transform: uppercase; 
+	text-align: center; 
+	border-top: thick solid #eeeeee; 
+	border-bottom: thin solid #cccccc; 
+}
+tr.head { letter-spacing: 1.5px;
+		  background: #dddddd; 
+		  color: #000000; 
+		  text-transform: uppercase; 
+		  border-top: thick solid #eeeeee; 
+		  border-bottom: thin solid #cccccc;
+}
+tr.body { background: #ffffff; 
+	color: #000000; }
+td { border: thin solid #cccccc; 
+	padding: 10px; }
+#header{
+	margin-top: -20px;
+	margin-left: -7px;
+text-align: center;
+width: fill;
+text-transform: capitalize;
+font-family: calibri;
+	text-transform: uppercase;
+	background-color: black;
+	color: #80b3ff;
+	}
+	
+#menu{
+	background-color: #80b3ff;
+	margin-top: -22px;
+	text-align: center;
+	margin-left: -7px;
+}
+
+a{
+	width: fill;
+	color: black;
+	font-family: sans-serif;
+}
+a:hover{
+	background-color: #ffffcc;
+	font-style: italic;
+}
+ul {
+    margin: 0;
+    margin-left: -7px;
+    padding: 0;
+    margin-top: -20px;
+    font-family: calibri;
+    background-color: #80b3ff;
+    height: 100%; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto;
+    text-transform: capitalize; /* Enable scrolling if the sidenav has too much content */
+}
+li a{
+	list-style-type: circle;
+	display: block;
+	width: 200px;
+	margin-bottom: 10px;
+	background-color: #80b3ff;
+}
+#main{
+	margin-left: 210px;
+}
+ol{
+	list-style-type: none;
+}
+h1{
+	font-style: calibri;
+}
+#simple{
+	height: auto;
+}
